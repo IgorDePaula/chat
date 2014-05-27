@@ -1,0 +1,27 @@
+{
+  "name": "chat",
+  "version": "0.0.3",
+  "description": "Single Chat App using socket.io",
+  "main": "server.js",
+  "dependencies": {
+    "socket.io": "~0.9.17"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/IgorDePaula/chat.git"
+  },
+  "keywords": [
+    "chat",
+    "socket.io"
+  ],
+  "author": "IgorDePaula <principe.borodin@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/IgorDePaula/chat/issues"
+  }
+}
