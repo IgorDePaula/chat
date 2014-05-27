@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <script src='http://localhost:8020/socket.io/socket.io.js'></script>
+        <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js'></script>
+        <script>
+           $(document).ready(function(){
+            var nome = prompt('Qual o seu nome?');
+            var socket = io.connect('http://localhost:8020');
+            socket.on('connect',function(){
+                socket.emit('adduser',nome);
+            });
+            $("#send").on('click',function(){
+                socket.emit('send',nome,$('#msg').val());
+            });
+            socket.on('new',function(data){
+                $('#messages').append(data.msg);
+            });
+           
+           });
+                      
+
+
+
+        </script>
+    </head>
+    <body>
+        <div id='messages'></div><br/>
+        <textarea id="msg"></textarea>
+        <input type="button" id="send" value="Enviar">
+    </body>
+</html>
